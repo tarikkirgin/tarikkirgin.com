@@ -22,11 +22,15 @@
       if (!prefersReducedMotion) {
         const svg = this.querySelector("svg");
 
+        let pageLoadTimeoutId: any;
+
         // page load
-        window.addEventListener("load", () =>
-          setTimeout(() => {
-            startAnimation();
-          }, 5000)
+        window.addEventListener(
+          "load",
+          () =>
+            (pageLoadTimeoutId = setTimeout(() => {
+              startAnimation();
+            }, 5000))
         );
 
         // mouse hover
@@ -51,6 +55,7 @@
           if (!intervalId) {
             intervalId = setInterval(moveViewbox, speed);
           }
+          clearInterval(pageLoadTimeoutId);
         }
 
         function stopAnimation() {
