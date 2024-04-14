@@ -2,12 +2,12 @@
     <path stroke="#000000" d="M0 0h4M5 0h1M1 1h1M3 1h2M1 2h1M3 2h1M5 2h1" />
     <style>
         path {
-            fill: #000;
+            stroke: #000;
         }
 
         @media (prefers-color-scheme: dark) {
             path {
-                fill: #FFF;
+                stroke: #FFF;
             }
         }
     </style>
