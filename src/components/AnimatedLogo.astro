@@ -29,7 +29,7 @@
         window.addEventListener(
           "load",
           () =>
-            (pageLoadTimeoutId = setTimeout(() => {
+            (pageLoadTimeoutId = setInterval(() => {
               startAnimation();
             }, 5000))
         );
@@ -56,11 +56,14 @@
           if (!intervalId) {
             intervalId = setInterval(moveViewbox, speed);
           }
-          clearInterval(pageLoadTimeoutId);
         }
 
         function stopAnimation() {
           clearInterval(intervalId);
+          clearInterval(pageLoadTimeoutId);
+          pageLoadTimeoutId = setInterval(() => {
+            startAnimation();
+          }, 5000);
           intervalId = null;
         }
 
