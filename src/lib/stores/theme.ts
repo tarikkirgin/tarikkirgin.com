@@ -4,7 +4,7 @@ import { onMount } from "nanostores";
 export const THEME_MAP = {
   light: "light",
   dark: "dark",
-  system: undefined,
+  system: "system",
 } as const;
 
 export type ThemeKey = keyof typeof THEME_MAP;
