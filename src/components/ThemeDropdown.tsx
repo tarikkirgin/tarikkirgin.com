@@ -1,18 +1,29 @@
-export default function ThemeDropdown() {
-  const onClickLight = () => {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  };
+import { useStore } from "@nanostores/react";
+import { THEME_MAP, themeStore } from "../lib/stores/theme";
 
-  const onClickDark = () => {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  };
+export default function ThemeDropdown() {
+  const theme = useStore(themeStore);
 
   return (
     <div>
-      <button onClick={onClickLight}>Light</button>
-      <button onClick={onClickDark}>Dark</button>
+      <button
+        className="justify-between"
+        onClick={() => themeStore.set(THEME_MAP.dark)}
+      >
+        Dark
+      </button>
+      <button
+        className="justify-between"
+        onClick={() => themeStore.set(THEME_MAP.light)}
+      >
+        Light
+      </button>
+      <button
+        className="justify-between"
+        onClick={() => themeStore.set(THEME_MAP.system)}
+      >
+        System
+      </button>
     </div>
   );
 }
