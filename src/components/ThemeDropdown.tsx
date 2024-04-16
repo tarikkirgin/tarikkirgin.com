@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { THEME_MAP, themeStore } from "../lib/stores/theme";
+import { THEME_MAP, themeStore } from "~/lib/stores/theme";
 
 export default function ThemeDropdown() {
   const theme = useStore(themeStore);
