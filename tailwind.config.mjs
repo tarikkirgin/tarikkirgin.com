@@ -13,5 +13,21 @@ export default {
     },
   },
   plugins: [
+    function ({ addComponents, theme }) {
+      addComponents({
+        ".link": {
+          color: theme("colors.black"),
+          "border-bottom-width": "1.5px",
+          "border-color": theme("colors.gray.200"),
+          transition: "all 0.3s ease-in-out",
+          "&:hover": {
+            "border-color": theme("colors.gray.500"),
+          },
+          "&:focus": {
+            "border-color": theme("colors.gray.500"),
+          },
+        },
+      });
+    },
   ],
 };
