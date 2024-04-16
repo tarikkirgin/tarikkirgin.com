@@ -11,12 +11,12 @@ const { icon, href, name } = Astro.props;
 ---
 
 <a
-  class="group link inline-flex gap-1 pb-0.5 px-0.5 justify-center items-center text-lg"
+  class="group link dark:link-dark inline-flex gap-1 pb-0.5 pr-0.5 justify-center items-center text-lg"
   href={href}
   target="_blank"
 >
   <Icon
-    class="h-6 w-full text-gray-600 group-hover:text-black group-focus:text-black transition duration-300 ease-in-out"
+    class="h-6 w-full text-neutral-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white group-hover:text-black group-focus:text-black group-hover:transition-all group-focus:transition-all group-hover:duration-300 group-focus:duration-300"
     name={icon}
   />
   {name}</a

@@ -1,5 +1,6 @@
 ---
 import AnimatedLogo from "./AnimatedLogo.astro";
+import ThemeDropdown from "./ThemeDropdown";
 ---
 
 <nav class="">
@@ -11,19 +12,9 @@ import AnimatedLogo from "./AnimatedLogo.astro";
   justify-between
   mx-auto"
   >
-    <a id="logo" href="/" class="flex">
+    <a id="logo" href="#" class="flex">
       <AnimatedLogo />
     </a>
-    <ul class="flex font-medium text-gray-500">
-      <li>
-        <a href="#" class="block py-2 px-3 hover:text-black">about</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 hover:text-black">projects</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 hover:text-black">blog</a>
-      </li>
-    </ul>
+    <ThemeDropdown client:load />
   </div>
 </nav>
