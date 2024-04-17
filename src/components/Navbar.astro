@@ -1,6 +1,6 @@
 ---
 import AnimatedLogo from "~/components/AnimatedLogo.astro";
-import ThemeDropdown from "~/components/ThemeDropdown";
+import ThemeDropdownContainer from "~/components/ThemeDropdownContainer.astro";
 ---
 
 <nav class="">
@@ -15,6 +15,6 @@ import ThemeDropdown from "~/components/ThemeDropdown";
     <a id="logo" href="/" class="flex">
       <AnimatedLogo />
     </a>
-    <ThemeDropdown client:load />
+    <ThemeDropdownContainer />
   </div>
 </nav>

@@ -1,0 +1,13 @@
+---
+import ThemeDropdown from "~/components/ThemeDropdown";
+
+import { Icon } from "astro-icon/components";
+---
+
+<ThemeDropdown client:load>
+  <Icon
+    class="absolute pointer-events-none h-5 ml-7 w-full text-neutral-700 dark:text-neutral-200"
+    slot="chevron"
+    name="mdi:chevron-down"
+  />
+</ThemeDropdown>
