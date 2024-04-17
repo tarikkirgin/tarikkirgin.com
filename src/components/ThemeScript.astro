@@ -3,7 +3,7 @@
 
   if (
     theme === "dark" ||
-    (theme === "system" &&
+    ((theme === "system" || theme == null) &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     document.documentElement.classList.add("dark");
