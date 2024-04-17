@@ -4,8 +4,6 @@ import { THEME_MAP, type ThemeKey, themeStore } from "~/lib/stores/theme";
 export default function ThemeDropdown(props: any) {
   const theme = useStore(themeStore);
 
-  console.log("theme: ", theme);
-
   return (
     <label className="group relative flex items-center">
       <select
