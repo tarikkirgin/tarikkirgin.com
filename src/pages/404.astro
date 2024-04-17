@@ -1,5 +1,23 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+
+const big_cat = {
+  start: `
+__..--''\`\`---....___   _..._    __
+    /// //_.-'    .-/";  \`        \`\`<._  \`\`.''_ \`. / // /
+   ///_.-' _..--.'_    \                    \`( ) ) // //
+   / (_..-' // (< _     ;_..__               ; \`' / ///
+`,
+  end: ` / // // //  \`-._,_)' // / \`\`--...____..-' /// / //`,
+};
+
+const small_cat = {
+  start: `
+      )\\._.,--....,'\`\`.
+     /,   _.. \\   _\\  ;\`._ ,.
+`,
+  end: ` \`._.-(,_..'--(,_..'\`-.;.'`,
+};
 ---
 
 <Layout title="tarik kirgin - 404">
@@ -10,5 +28,10 @@ import Layout from "~/layouts/Layout.astro";
       page not found :(
     </h1>
     <a class="link dark:link-dark text-lg" href="/"> return home </a>
+    <div class="flex justify-center">
+      <pre
+        class="pt-32 text-xs"
+        aria-label="ASCII art of cat lying down">{small_cat.start} <a class="link dark:link-dark" href="https://montcs.bloomu.edu/Graphics/ascii-art.html">fL</a>{small_cat.end}</pre>
+    </div>
   </main>
 </Layout>
