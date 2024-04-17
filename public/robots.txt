@@ -1,0 +1,5 @@
+# hey there robot :3
+
+# allow all crawlers
+User-agent: *
+Allow: /
