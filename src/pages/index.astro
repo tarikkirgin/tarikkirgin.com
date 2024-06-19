@@ -1,6 +1,8 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import IconLink from "~/components/IconLink.astro";
+import About from "~/components/sections/About.astro";
+import Links from "~/components/sections/Links.astro";
+import Projects from "~/components/sections/Projects.astro";
 ---
 
 <Layout title="tarik kirgin">
@@ -10,50 +12,11 @@ import IconLink from "~/components/IconLink.astro";
     <h1 class="font-semibold text-4xl pb-8 text-black dark:text-white">
       tarik kirgin
     </h1>
-    <section class="">
-      <h1 class="hidden">about</h1>
-      <p class="text-lg">
-        hi, i'm tarik kirgin, a computer science student at the <a
-          class="link dark:link-dark"
-          href="https://www.leeds.ac.uk/"
-          target="_blank">university of leeds</a
-        >.
-      </p>
-      <br />
-      <p class="text-lg">
-        i have a wide range of interests within the field of computer science
-        and am always eager to try something new!
-      </p>
-    </section>
+    <About />
     <br />
-    <section>
-      <h1 class="hidden">links</h1>
-      <p class="text-lg">find me below:</p>
-      <div class="flex justify-center pt-8">
-        <ul class="flex flex-col items-center xxs:flex-row gap-8">
-          <li>
-            <IconLink
-              icon="mdi:github"
-              name="github"
-              href="https://www.github.com/tarikkirgin"
-            />
-          </li>
-          <li>
-            <IconLink
-              icon="mdi:linkedin"
-              name="linkedin"
-              href="https://www.linkedin.com/in/tarik-kirgin/"
-            />
-          </li>
-          <li>
-            <IconLink
-              icon="mdi:email"
-              name="email"
-              href="mailto:hi@tarikkirgin.com"
-            />
-          </li>
-        </ul>
-      </div>
-    </section>
+    <Links />
+    <br />
+    <Projects />
+    <br />
   </main>
 </Layout>

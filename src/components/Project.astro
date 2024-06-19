@@ -1,0 +1,36 @@
+---
+import Tag from "./Tag.astro";
+
+interface Props {
+  icon: string;
+  href: string;
+  name: string;
+  description: string;
+  tags: string[];
+}
+
+const { icon, href, name, description, tags } = Astro.props;
+---
+
+<a href={href} target="_blank">
+  <div
+    class="flex flex-col xxs:flex-row items-center py-3 px-1 bg-white hover:bg-neutral-100 focus:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-800 text-black dark:text-white rounded-md"
+  >
+    <img src={icon} alt={name} class="h-28 mx-6 mb-3 xxs:mb-0" />
+    <div class="flex flex-col gap-2 px-2">
+      <p class="text-xl">{name}</p>
+      <p class="text-md text-neutral-500">
+        {description}
+        <ul class="flex flex-row flex-wrap pt-1 gap-1.5">
+          {
+            tags.map((tag) => (
+              <li>
+                <Tag title={tag} />
+              </li>
+            ))
+          }
+        </ul>
+      </p>
+    </div>
+  </div>
+</a>
