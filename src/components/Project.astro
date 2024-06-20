@@ -1,5 +1,6 @@
 ---
 import Tag from "./Tag.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   icon: string;
@@ -18,7 +19,10 @@ const { icon, href, name, description, tags } = Astro.props;
   >
     <img src={icon} alt={name} class="h-28 mx-6 mb-3 xxs:mb-0" />
     <div class="flex flex-col gap-2 px-2">
-      <p class="text-xl">{name}</p>
+      <div class="flex flex-row gap-1 items-center">
+        <p class="text-xl">{name}</p>
+        <Icon name="mdi:launch" size={15} />
+      </div>
       <p class="text-md text-neutral-500">
         {description}
         <ul class="flex flex-row flex-wrap pt-1 gap-1.5">
