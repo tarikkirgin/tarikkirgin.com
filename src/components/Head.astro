@@ -1,0 +1,36 @@
+---
+import ThemeScript from "~/components/ThemeScript.astro";
+import ConsoleScript from "~/components/ConsoleScript.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const description = "Personal portfolio website of Tarik Kirgin.";
+const imageURL = `${Astro.url}/og.png`;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="title" content="tarik kirgin" />
+  <meta name="description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={imageURL} />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={imageURL} />
+  <ThemeScript />
+  <ConsoleScript />
+</head>
