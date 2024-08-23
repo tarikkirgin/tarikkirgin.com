@@ -20,20 +20,20 @@ export default {
         ".link": {
           color: theme("colors.black"),
           "border-bottom-width": "1.5px",
-          "border-color": theme("colors.neutral.200"),
+          "border-color": theme("colors.neutral.400"),
           "&:hover": {
-            "border-color": theme("colors.neutral.500"),
+            "border-color": theme("colors.neutral.600"),
             transition: "all 0.3s",
           },
           "&:focus": {
-            "border-color": theme("colors.neutral.500"),
+            "border-color": theme("colors.neutral.600"),
             transition: "all 0.3s",
           },
         },
         ".link-dark": {
           color: theme("colors.white"),
           "border-bottom-width": "1.5px",
-          "border-color": theme("colors.neutral.700"),
+          "border-color": theme("colors.neutral.500"),
           "&:hover": {
             "border-color": theme("colors.neutral.300"),
             transition: "all 0.3s",
