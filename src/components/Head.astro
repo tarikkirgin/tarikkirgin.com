@@ -1,15 +1,25 @@
 ---
 import ThemeScript from "~/components/ThemeScript.astro";
 import ConsoleScript from "~/components/ConsoleScript.astro";
+import { siteConfig } from "~/consts";
 
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
+  imagePath?: string;
 }
 
-const { title } = Astro.props;
+const { props } = Astro;
 
-const description = "Personal portfolio website of Tarik Kirgin.";
-const imageURL = `${Astro.url}/og.png`;
+const title =
+  props.title && siteConfig.titleTemplate
+    ? siteConfig.titleTemplate.replace("%s", props.title)
+    : siteConfig.title;
+
+const description = props.description ?? siteConfig.description;
+
+const imageURL =
+  `${Astro.url}/${props.imagePath}` ?? `${Astro.url}/${siteConfig.imagePath}`;
 ---
 
 <head>
@@ -19,7 +29,7 @@ const imageURL = `${Astro.url}/og.png`;
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <meta name="title" content="tarik kirgin" />
+  <meta name="title" content={title} />
   <meta name="description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={Astro.url} />
