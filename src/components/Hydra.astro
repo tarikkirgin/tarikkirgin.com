@@ -1,20 +1,33 @@
+---
+interface Props {
+  saturation: number;
+}
+
+const { saturation } = Astro.props;
+---
+
 <div
-  class="bg-white/90 dark:bg-black/85 w-full h-full fixed top-0 left-0 -z-10"
+  class="bg-white/85 dark:bg-black/80 w-full h-full fixed top-0 left-0 -z-10"
 >
 </div>
 <canvas class="fixed -z-20 top-0 left-0 h-full min-w-full" id="hydra"></canvas>
 <script src="https://unpkg.com/hydra-synth" is:inline></script>
-<script is:inline>
+<script is:inline define:vars={{ saturation }}>
   new Hydra({
     detectAudio: false,
     canvas: document.getElementById("hydra"),
   });
 
+  const random = Math.random();
+
+  speed = 0.3;
+
   osc(5, 0.05, 2)
     .modulate(noise(2, 0.15).pixelate(), -0.5)
-    .modulateScale(osc(2, 0.05), 0.08)
+    .modulateScale(osc(2, 0.05), 0.01)
     .hue(() => Math.sin((time * random) / 100))
     .blend(o0)
     .blend(o0)
+    .saturate(saturation)
     .out(o0);
 </script>
