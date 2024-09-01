@@ -1,4 +1,5 @@
 ---
+import "~/styles/globals.css";
 import Navbar from "~/components/Navbar.astro";
 import Head from "~/components/Head.astro";
 ---
@@ -10,7 +11,7 @@ import Head from "~/components/Head.astro";
     defer
     src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "a2ab3c749177479d965530d31b29ce65"}'></script>
-  <body class="p-4 bg-white dark:bg-neutral-900">
+  <body class="p-4 bg-background text-foreground">
     <header>
       <Navbar />
     </header>

@@ -1,11 +1,21 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "selector",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        border: "var(--border)",
+        accent: "var(--accent)",
+        "accent-2": "var(--accent-2)",
+        muted: "var(--muted)",
+      },
+    },
     screens: {
       xxxxs: "230px",
       xxxs: "300px",
@@ -18,32 +28,19 @@ export default {
     function ({ addComponents, theme }) {
       addComponents({
         ".link": {
-          color: theme("colors.black"),
+          color: theme("colors.foreground"),
           "border-bottom-width": "1.5px",
-          "border-color": theme("colors.neutral.200"),
-          "&:hover": {
-            "border-color": theme("colors.neutral.500"),
-            transition: "all 0.3s",
-          },
-          "&:focus": {
-            "border-color": theme("colors.neutral.500"),
-            transition: "all 0.3s",
-          },
-        },
-        ".link-dark": {
-          color: theme("colors.white"),
-          "border-bottom-width": "1.5px",
-          "border-color": theme("colors.neutral.700"),
-          "&:hover": {
-            "border-color": theme("colors.neutral.300"),
-            transition: "all 0.3s",
-          },
-          "&:focus": {
-            "border-color": theme("colors.neutral.300"),
+          "border-color": theme("colors.accent-2"),
+          "&:hover, &:focus": {
+            "border-color": theme("colors.muted"),
             transition: "all 0.3s",
           },
         },
       });
     },
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus-visible"]);
+      addVariant("group-hocus", [".group:hover &", ".group:focus &"]);
+    }),
   ],
 };

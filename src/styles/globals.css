@@ -1,0 +1,17 @@
+:root {
+  --background: theme(colors.white);
+  --foreground: theme(colors.black);
+  --border: theme(colors.neutral.200);
+  --accent: theme(colors.neutral.100);
+  --accent-2: theme(colors.neutral.300);
+  --muted: theme(colors.neutral.500);
+}
+
+.dark {
+  --background: theme(colors.neutral.900);
+  --foreground: theme(colors.white);
+  --border: theme(colors.neutral.800);
+  --accent: theme(colors.neutral.800);
+  --accent-2: theme(colors.neutral.700);
+  --muted: theme(colors.neutral.500);
+}

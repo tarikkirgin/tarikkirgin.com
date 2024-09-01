@@ -13,17 +13,17 @@ interface Props {
 const { icon, href, name, description, tags } = Astro.props;
 ---
 
-<a href={href} target="_blank">
+<a href={href} target="_blank" class="group">
   <div
-    class="flex flex-col xxs:flex-row items-center py-3 px-1 bg-white hover:bg-neutral-100 focus-visible:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-800 text-black dark:text-white rounded-md"
+    class="flex flex-col xxs:flex-row items-center py-3 px-1 group-hocus:bg-accent ring-1 ring-border rounded-md"
   >
     <img src={icon} alt={name} class="h-28 mx-6 mb-3 xxs:mb-0" />
     <div class="flex flex-col gap-2 px-2">
       <div class="flex flex-row gap-1 items-center">
-        <p class="text-xl">{name}</p>
+        <p class="text-xl text-foreground">{name}</p>
         <Icon name="mdi:launch" size={15} />
       </div>
-      <p class="text-md text-neutral-500">
+      <p class="text-md text-muted">
         {description}
         <ul class="flex flex-row flex-wrap pt-1 gap-1.5">
           {

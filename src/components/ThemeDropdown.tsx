@@ -8,7 +8,7 @@ export default function ThemeDropdown(props: any) {
     <div className="group relative flex items-center pl-2">
       <select
         title="Select theme"
-        className="select-none appearance-none cursor-pointer pl-3 pr-8 py-2 pb-2.5 bg-white hover:bg-neutral-100 focus-visible:bg-neutral-100  dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus-visible:bg-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-800 text-black dark:text-white rounded-md"
+        className="select-none appearance-none cursor-pointer pl-3 pr-8 py-2 pb-2.5 bg-background group-hocus:bg-accent ring-1 ring-border rounded-md"
         defaultValue={theme}
         onChange={(e) => themeStore.set(THEME_MAP[e.target.value as ThemeKey])}
       >
