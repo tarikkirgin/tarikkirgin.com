@@ -1,0 +1,25 @@
+---
+import MainLayout from "./MainLayout.astro";
+import Heading from "~/components/Heading.astro";
+import { type CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+
+interface Props {
+  blog: CollectionEntry<"blog">;
+}
+
+const { blog } = Astro.props;
+const { title, date } = blog.data;
+
+const formattedDate = format(date, "MMMM do, yyyy") ?? "";
+
+const { Content } = await blog.render();
+---
+
+<MainLayout title={title}>
+  <Heading heading={title} />
+  <date class="block pt-2 pb-12 text-muted">
+    {formattedDate}
+  </date>
+  <article class="mdx"><Content /></article>
+</MainLayout>
