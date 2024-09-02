@@ -1,6 +1,8 @@
 :root {
   --background: theme(colors.white);
+  --background-dim: theme(colors.neutral.100);
   --foreground: theme(colors.black);
+  --foreground-dim: theme(colors.neutral.600);
   --border: theme(colors.neutral.200);
   --accent: theme(colors.neutral.100);
   --accent-2: theme(colors.neutral.300);
@@ -9,8 +11,10 @@
 
 .dark {
   --background: theme(colors.neutral.900);
+  --background-dim: theme(colors.neutral.800);
   --foreground: theme(colors.white);
-  --border: theme(colors.neutral.800);
+  --foreground-dim: theme(colors.neutral.400);
+  --border: theme(colors.neutral.700);
   --accent: theme(colors.neutral.800);
   --accent-2: theme(colors.neutral.700);
   --muted: theme(colors.neutral.500);

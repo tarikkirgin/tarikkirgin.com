@@ -9,7 +9,9 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
+        "background-dim": "var(--background-dim)",
         foreground: "var(--foreground)",
+        "foreground-dim": "var(--foreground-dim)",
         border: "var(--border)",
         accent: "var(--accent)",
         "accent-2": "var(--accent-2)",
