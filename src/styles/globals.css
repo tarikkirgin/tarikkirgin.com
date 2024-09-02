@@ -35,3 +35,25 @@
   transition: all 0.3s;
 }
 
+.external-link::after {
+  margin-left: 0rem;
+  margin-bottom: -0.1rem;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  background-color: var(--muted);
+  transition: all 0.3s;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>')
+    no-repeat 50% 50%;
+  mask-size: cover;
+}
+
+.external-link:hover::after,
+.external-link:focus::after {
+  margin-left: 0.1rem;
+  margin-bottom: 0rem;
+  margin-right: -0.1rem;
+  background-color: var(--foreground);
+  transition: all 0.3s;
+}
