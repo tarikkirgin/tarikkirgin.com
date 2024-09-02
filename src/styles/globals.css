@@ -19,3 +19,19 @@
   --accent-2: theme(colors.neutral.700);
   --muted: theme(colors.neutral.500);
 }
+
+.link {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-underline-position: under;
+  text-decoration-thickness: 1.5px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:focus {
+  text-decoration-color: var(--muted);
+  transition: all 0.3s;
+}
+

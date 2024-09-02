@@ -27,19 +27,6 @@ export default {
     },
   },
   plugins: [
-    function ({ addComponents, theme }) {
-      addComponents({
-        ".link": {
-          color: theme("colors.foreground"),
-          "border-bottom-width": "1.5px",
-          "border-color": theme("colors.accent-2"),
-          "&:hover, &:focus": {
-            "border-color": theme("colors.muted"),
-            transition: "all 0.3s",
-          },
-        },
-      });
-    },
     plugin(function ({ addVariant }) {
       addVariant("hocus", ["&:hover", "&:focus-visible"]);
       addVariant("group-hocus", [".group:hover &", ".group:focus &"]);
