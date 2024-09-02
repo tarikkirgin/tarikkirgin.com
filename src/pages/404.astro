@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import MainLayout from "~/layouts/MainLayout.astro";
 
 const big_cat = {
   start: `
@@ -20,16 +20,12 @@ const small_cat = {
 };
 ---
 
-<Layout title="tarik kirgin - 404">
-  <main class="max-w-screen-sm mx-auto pt-10">
-    <h1 class="font-semibold text-4xl pb-8 text-foreground">
-      page not found :(
-    </h1>
-    <a class="link text-lg" href="/"> return home </a>
-    <div class="flex justify-center">
-      <pre
-        class="pt-32 text-xs text-muted"
-        aria-label="ASCII art of cat lying down">{small_cat.start} <a class="link" href="https://montcs.bloomu.edu/Graphics/ascii-art.html">fL</a>{small_cat.end}</pre>
-    </div>
-  </main>
-</Layout>
+<MainLayout title="404">
+  <h1 class="font-semibold text-4xl pb-8 text-foreground">page not found :(</h1>
+  <a class="link text-lg" href="/"> return home </a>
+  <div class="flex justify-center">
+    <pre
+      class="pt-32 text-xs text-muted"
+      aria-label="ASCII art of cat lying down">{small_cat.start} <a class="link" href="https://montcs.bloomu.edu/Graphics/ascii-art.html">fL</a>{small_cat.end}</pre>
+  </div>
+</MainLayout>
