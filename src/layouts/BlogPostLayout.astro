@@ -1,4 +1,6 @@
 ---
+import "~/styles/mdx.scss";
+
 import MainLayout from "./MainLayout.astro";
 import Heading from "~/components/Heading.astro";
 import { type CollectionEntry } from "astro:content";
@@ -9,7 +11,7 @@ interface Props {
 }
 
 const { blog } = Astro.props;
-const { title, date } = blog.data;
+const { title, date, author } = blog.data;
 
 const formattedDate = format(date, "MMMM do, yyyy") ?? "";
 
@@ -18,8 +20,13 @@ const { Content } = await blog.render();
 
 <MainLayout title={title}>
   <Heading heading={title} />
-  <date class="block pt-2 pb-12 text-muted">
-    {formattedDate}
-  </date>
+  <div class="flex flex-col gap-1 pt-2 pb-12 text-muted">
+    <date class="">
+      {formattedDate}
+    </date>
+    <p class="text-muted">
+      by <a href="/" class="link">{author}</a>
+    </p>
+  </div>
   <article class="mdx"><Content /></article>
 </MainLayout>
