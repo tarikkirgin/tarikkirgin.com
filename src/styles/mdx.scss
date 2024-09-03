@@ -53,29 +53,24 @@
   }
 
   // headings
-  :where(h1, h2, h3, h4, h5, h6) {
+  :where(h2, h3, h4, h5, h6) {
     color: var(--foreground);
     font-weight: bold;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-  }
-
-  h1 {
-    font-size: 2rem;
+    margin-block: 1em;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   h4,
   h5,
   h6 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 
   // lists
@@ -209,7 +204,8 @@
 
   [data-highlighted-chars] {
     background-color: var(--code-highlight);
-    padding: 1.5px 2px;
+    padding-inline: 0.2em;
+    padding-block: 0.1em;
   }
 
   [data-chars-id] {
@@ -218,7 +214,7 @@
   }
 
   [data-chars-id="v"] {
-    background-color: #ff141480;
+    background-color: #9f123980;
   }
 
   [data-chars-id="s"] {
@@ -262,10 +258,12 @@
     &:before {
       content: "[";
       color: var(--foreground-dim);
+      transition: all 0.3s;
     }
     &:after {
       content: "]";
       color: var(--foreground-dim);
+      transition: all 0.3s;
     }
 
     &:hover:after,
@@ -278,7 +276,6 @@
   }
 
   [data-footnotes] {
-    margin-top: -2rem;
     p {
       display: inline;
       margin-left: -4.5px;
