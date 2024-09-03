@@ -1,9 +1,10 @@
 ---
 interface Props {
   heading: string;
+  style?: string;
 }
 
-const { heading } = Astro.props;
+const { heading, style } = Astro.props;
 ---
 
-<h1 class="font-semibold text-4xl">{heading}</h1>
+<h1 class={`font-semibold text-4xl ${style}`}>{heading}</h1>
