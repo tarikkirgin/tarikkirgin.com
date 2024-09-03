@@ -257,12 +257,23 @@
 
   [data-footnote-ref] {
     color: var(--foreground);
+    transition: all 0.3s;
     margin-inline: 1px;
     &:before {
       content: "[";
+      color: var(--foreground-dim);
     }
     &:after {
       content: "]";
+      color: var(--foreground-dim);
+    }
+
+    &:hover:after,
+    &:focus-visible:after,
+    &:hover:before,
+    &:focus-visible:before {
+      color: var(--foreground);
+      transition: all 0.3s;
     }
   }
 
