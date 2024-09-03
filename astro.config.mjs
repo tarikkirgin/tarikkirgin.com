@@ -25,15 +25,6 @@ export default defineConfig({
       rehypePlugins: [
         rehypeSlug,
         [
-          rehypeAutolinkHeadings,
-          {
-            behavior: "wrap",
-            properties: {
-              className: ["anchor"],
-            },
-          },
-        ],
-        [
           rehypeExternalLinks,
           {
             properties: {
