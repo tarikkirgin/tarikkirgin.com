@@ -3,17 +3,16 @@ import MainLayout from "~/layouts/MainLayout.astro";
 import About from "~/components/sections/About.astro";
 import Links from "~/components/sections/Links.astro";
 import Projects from "~/components/sections/Projects.astro";
-import Header from "~/components/Heading.astro";
+import Blog from "~/components/sections/Blog.astro";
+import Heading from "~/components/Heading.astro";
 ---
 
 <MainLayout>
-  <Header heading="tarik kirgin" />
-  <div class="text-foreground-dim pt-6">
+  <Heading heading="tarik kirgin" />
+  <div class="text-foreground-dim pt-6 *:pb-6">
     <About />
-    <br />
     <Links />
-    <br />
     <Projects />
-    <br />
+    <Blog />
   </div>
 </MainLayout>
