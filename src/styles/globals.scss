@@ -33,7 +33,7 @@
   transition: all 0.3s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     text-decoration-color: var(--muted);
     transition: all 0.3s;
   }
@@ -55,7 +55,7 @@
     mask-size: cover;
   }
   &:hover:after,
-  &:focus:after {
+  &:focus-visible:after {
     margin-left: 0.2rem;
     margin-bottom: 0rem;
     margin-right: -0.1rem;
