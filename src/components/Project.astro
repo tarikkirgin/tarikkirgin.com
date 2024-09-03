@@ -13,28 +13,28 @@ interface Props {
 const { icon, href, name, description, tags } = Astro.props;
 ---
 
-<a href={href} target="_blank" class="group">
-  <div
-    class="flex flex-col xxs:flex-row items-center py-3 px-1 group-hocus:bg-accent ring-1 ring-border rounded-md"
-  >
-    <img src={icon} alt={name} class="h-28 mx-6 mb-3 xxs:mb-0" />
-    <div class="flex flex-col gap-2 px-2">
-      <div class="flex flex-row gap-1 items-center">
-        <p class="text-xl text-foreground">{name}</p>
-        <Icon name="external" size={15} />
-      </div>
-      <p class="text-md text-muted">
-        {description}
-        <ul class="flex flex-row flex-wrap pt-1 gap-1.5">
-          {
-            tags.map((tag) => (
-              <li>
-                <Tag title={tag} />
-              </li>
-            ))
-          }
-        </ul>
-      </p>
+<a
+  href={href}
+  target="_blank"
+  class="flex flex-col xxs:flex-row items-center py-3 px-1 hocus:bg-accent ring-1 ring-border rounded-md"
+>
+  <img src={icon} alt={name} class="h-28 mx-6 mb-3 xxs:mb-0" />
+  <div class="flex flex-col gap-2 px-2">
+    <div class="flex flex-row gap-1 items-center">
+      <p class="text-xl text-foreground">{name}</p>
+      <Icon name="external" size={15} />
     </div>
+    <p class="text-md text-muted">
+      {description}
+      <ul class="flex flex-row flex-wrap pt-1 gap-1.5">
+        {
+          tags.map((tag) => (
+            <li>
+              <Tag title={tag} />
+            </li>
+          ))
+        }
+      </ul>
+    </p>
   </div>
 </a>
