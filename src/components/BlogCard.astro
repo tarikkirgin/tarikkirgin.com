@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry } from "astro:content";
+import Tag from "./Tag.astro";
+import { format } from "date-fns/format";
+
+interface Props {
+  blog: CollectionEntry<"blog">;
+}
+
+const { slug, data } = Astro.props.blog;
+const { title, tags, date } = data;
+
+const datetime = format(new Date(date), "yyyy-MM-dd");
+const formattedDate = format(new Date(date), "MMMM dd, yyyy");
+---
+
+<a href={`/blog/${slug}`} class="group">
+  <div
+    class="px-3 pt-1.5 pb-3 group-hocus:bg-accent ring-1 ring-border rounded-md"
+  >
+    <p class="text-foreground text-lg">{title}</p>
+    <time datetime={datetime} class="text-muted text-sm">{formattedDate}</time>
+    {
+      tags && (
+        <ul class="pt-2 flex flex-row flex-wrap gap-1.5">
+          {tags.map((tag) => (
+            <li>
+              <Tag title={tag} />
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</a>

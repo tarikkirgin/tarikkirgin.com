@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+import BlogList from "~/components/BlogList.astro";
+const blogs = await getCollection("blog");
+---
+
+<section>
+  <h2 class="text-2xl semibold pb-4 text-foreground">blog</h2>
+  <BlogList blogs={blogs} />
+</section>

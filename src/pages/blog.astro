@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+
+import MainLayout from "~/layouts/MainLayout.astro";
+import Heading from "~/components/Heading.astro";
+import BlogList from "~/components/BlogList.astro";
+
+const blogs = await getCollection("blog");
+---
+
+<MainLayout>
+  <Heading heading="tarik's blog" style="pb-4" />
+  <BlogList blogs={blogs} />
+</MainLayout>

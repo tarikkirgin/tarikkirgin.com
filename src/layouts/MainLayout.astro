@@ -1,12 +1,20 @@
 ---
-import "~/styles/globals.css";
+import "~/styles/globals.scss";
 import Navbar from "~/components/Navbar.astro";
 import Head from "~/components/Head.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  imagePath?: string;
+}
+
+const props = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head />
+  <Head {...props} />
   <script
     defer
     src="https://static.cloudflareinsights.com/beacon.min.js"
@@ -15,7 +23,9 @@ import Head from "~/components/Head.astro";
     <header>
       <Navbar />
     </header>
-    <slot />
+    <main class="max-w-screen-sm mx-auto pt-6 lg:pt-0">
+      <slot />
+    </main>
     <style is:global>
       body {
         font-family: system-ui, sans-serif;

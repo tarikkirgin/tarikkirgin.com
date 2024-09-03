@@ -1,20 +1,18 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import MainLayout from "~/layouts/MainLayout.astro";
 import About from "~/components/sections/About.astro";
 import Links from "~/components/sections/Links.astro";
 import Projects from "~/components/sections/Projects.astro";
+import Blog from "~/components/sections/Blog.astro";
+import Heading from "~/components/Heading.astro";
 ---
 
-<Layout title="tarik kirgin">
-  <main class="max-w-screen-sm mx-auto pt-10">
-    <h1 class="font-semibold text-4xl pb-8">tarik kirgin</h1>
-    <div class="text-neutral-600 dark:text-neutral-300">
-      <About />
-      <br />
-      <Links />
-      <br />
-      <Projects />
-      <br />
-    </div>
-  </main>
-</Layout>
+<MainLayout>
+  <Heading heading="tarik kirgin" />
+  <div class="text-foreground-dim pt-6 *:pb-6">
+    <About />
+    <Links />
+    <Projects />
+    <Blog />
+  </div>
+</MainLayout>
