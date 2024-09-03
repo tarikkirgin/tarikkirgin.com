@@ -6,14 +6,16 @@ const blogCollection = defineCollection({
     title: z.string(),
     date: z.date(),
     author: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
-    tags: z.array(z.string()),
+    image: z
+      .object({
+        url: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
 export const collections = {
-  blogs: blogCollection,
+  blog: blogCollection,
 };
