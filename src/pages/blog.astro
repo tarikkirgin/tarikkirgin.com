@@ -8,7 +8,7 @@ import BlogList from "~/components/BlogList.astro";
 const blogs = await getCollection("blog");
 ---
 
-<MainLayout>
+<MainLayout title="blog">
   <Heading heading="tarik's blog" style="pb-4" />
   <BlogList blogs={blogs} />
 </MainLayout>
