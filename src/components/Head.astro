@@ -18,8 +18,9 @@ const title =
 
 const description = props.description ?? siteConfig.description;
 
-const imageURL =
-  `${Astro.url}/${props.imagePath}` ?? `${Astro.url}/${siteConfig.imagePath}`;
+const imageURL = props.imagePath
+  ? `${Astro.url}/${props.imagePath}`
+  : `${Astro.url}/${siteConfig.imagePath}`;
 ---
 
 <head>
