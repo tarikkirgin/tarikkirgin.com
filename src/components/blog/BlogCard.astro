@@ -7,7 +7,7 @@ interface Props {
   blog: CollectionEntry<"blog">;
 }
 
-const { slug, data } = Astro.props.blog;
+const { id, data } = Astro.props.blog;
 const { title, tags, date } = data;
 
 const datetime = format(new Date(date), "yyyy-MM-dd");
@@ -15,7 +15,7 @@ const formattedDate = format(new Date(date), "MMMM dd, yyyy");
 ---
 
 <a
-  href={`/blog/${slug}`}
+  href={`/blog/${id}`}
   class="px-3 pt-1.5 pb-3 hocus:bg-accent ring-1 ring-border rounded-md"
 >
   <p class="text-foreground text-lg">{title}</p>
