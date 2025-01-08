@@ -11,11 +11,13 @@ const { blogs } = Astro.props;
 
 {
   blogs.length > 0 ? (
-    <div>
+    <ul>
       {blogs.map((blog) => (
-        <BlogCard blog={blog} />
+        <li>
+          <BlogCard blog={blog} />
+        </li>
       ))}
-    </div>
+    </ul>
   ) : (
     <p class="text-muted">no blog posts yet :(</p>
   )
