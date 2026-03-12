@@ -38,13 +38,8 @@ const initThemeStoreSubscribe = () => {
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (!!mediaQuery.addEventListener) {
-      mediaQuery.removeEventListener("change", handleMediaQuery);
-      mediaQuery.addEventListener("change", handleMediaQuery);
-    } else {
-      mediaQuery.removeListener(handleMediaQuery);
-      mediaQuery.addListener(handleMediaQuery);
-    }
+    mediaQuery.removeEventListener("change", handleMediaQuery);
+    mediaQuery.addEventListener("change", handleMediaQuery);
     handleMediaQuery(mediaQuery);
   });
 };
