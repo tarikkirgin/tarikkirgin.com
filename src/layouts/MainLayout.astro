@@ -1,5 +1,5 @@
 ---
-import "~/styles/globals.scss";
+import "~/styles/global.css";
 import Navbar from "~/components/Navbar.astro";
 import Head from "~/components/Head.astro";
 
@@ -17,6 +17,7 @@ const props = Astro.props;
   <Head {...props} />
   <script
     defer
+    is:inline
     src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "a2ab3c749177479d965530d31b29ce65"}'></script>
   <body class="p-4 bg-background text-foreground">

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant hocus (&:is(:hover, :focus-visible));
+@custom-variant group-hocus (:is(.group:hover, .group:focus) &);
+
+@theme {
+  --breakpoint-xxxxs: 230px;
+  --breakpoint-xxxs: 300px;
+  --breakpoint-xxs: 375px;
+  --breakpoint-xs: 475px;
+
+  --color-background: var(--background);
+  --color-background-dim: var(--background-dim);
+  --color-foreground: var(--foreground);
+  --color-foreground-dim: var(--foreground-dim);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-muted: var(--muted);
+}
+
+@layer base {
+  :root {
+    --background: var(--color-white);
+    --background-dim: var(--color-neutral-100);
+    --foreground: var(--color-black);
+    --foreground-dim: var(--color-neutral-600);
+    --border: var(--color-neutral-200);
+    --accent: var(--color-neutral-100);
+    --accent-2: var(--color-neutral-300);
+    --muted: var(--color-neutral-500);
+    --code-background: #272822;
+    --code-foreground: #f8f8f3;
+    --code-highlight: #44453b;
+  }
+
+  .dark {
+    --background: var(--color-neutral-900);
+    --background-dim: var(--color-neutral-800);
+    --foreground: var(--color-white);
+    --foreground-dim: var(--color-neutral-400);
+    --border: var(--color-neutral-700);
+    --accent: var(--color-neutral-800);
+    --accent-2: var(--color-neutral-700);
+    --muted: var(--color-neutral-500);
+  }
+
+  .mdx a:not(.anchor):not([data-footnote-ref]) {
+    @apply link;
+  }
+}
+
+@utility link {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-underline-position: under;
+  text-decoration-thickness: 1.5px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:focus-visible,
+.mdx a:not(.anchor):not([data-footnote-ref]):hover,
+.mdx a:not(.anchor):not([data-footnote-ref]):focus-visible {
+  text-decoration-color: var(--muted);
+  transition: all 0.3s;
+}
+
+@utility external-link {
+  white-space: nowrap;
+}
+
+.external-link::after {
+  margin-left: 0.1rem;
+  margin-bottom: -0.1rem;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  background-color: var(--muted);
+  transition: all 0.3s;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>')
+    no-repeat 50% 50%;
+  mask-size: cover;
+}
+
+.external-link:hover::after,
+.external-link:focus-visible::after {
+  margin-left: 0.2rem;
+  margin-bottom: 0;
+  margin-right: -0.1rem;
+  background-color: var(--foreground);
+  transition: all 0.3s;
+}
