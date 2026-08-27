@@ -2,6 +2,6 @@
 
 This is the code for my personal website [here](https://tarikkirgin.com).
 
-## Inspiration
+## Attribution
 
-This website was heavily inspired by Anthony Fu's [website](https://antfu.me/) alongside utilising information from Edward Kim's [site](https://bepyan.me).
+Favicon graphic by [Twemoji](https://github.com/jdecked/twemoji) (Copyright 2019 Twitter, Inc. and other contributors), licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).

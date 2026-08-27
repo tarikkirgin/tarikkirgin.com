@@ -1,0 +1,19 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { format } from "date-fns/format";
+
+interface Props {
+  article: CollectionEntry<"writing">;
+}
+
+const { id, data } = Astro.props.article;
+const { title, date } = data;
+
+const datetime = format(new Date(date), "yyyy-MM-dd");
+const formattedDate = format(new Date(date), "do MMMM, yyyy");
+---
+
+<div class="flex flex-wrap items-center gap-x-2 pb-1">
+  <a href={`/writing/${id}`} class="link text-lg whitespace-nowrap">{title}</a>
+  <time datetime={datetime} class="text-muted text-sm">{formattedDate}</time>
+</div>

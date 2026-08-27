@@ -1,6 +1,6 @@
 ---
 import ThemeScript from "~/components/theme/ThemeScript.astro";
-import ConsoleScript from "~/components/ConsoleScript.astro";
+import { Font } from "astro:assets";
 import { siteConfig } from "~/consts";
 
 interface Props {
@@ -19,15 +19,19 @@ const title =
 const description = props.description ?? siteConfig.description;
 
 const imageURL = props.imagePath
-  ? `${Astro.url}/${props.imagePath}`
-  : `${Astro.url}/${siteConfig.imagePath}`;
+  ? new URL(props.imagePath, Astro.url)
+  : new URL(siteConfig.imagePath, Astro.url);
 ---
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Tarik Kirgin" />
+  <link rel="manifest" href="/site.webmanifest" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="title" content={title} />
@@ -43,5 +47,7 @@ const imageURL = props.imagePath
   <meta property="twitter:description" content={description} />
   <meta property="twitter:image" content={imageURL} />
   <ThemeScript />
-  <ConsoleScript />
+  <Font cssVariable="--font-platypi" />
+  <Font cssVariable="--font-jetbrains-mono" />
+  <Font cssVariable="--font-space-grotesk" />
 </head>

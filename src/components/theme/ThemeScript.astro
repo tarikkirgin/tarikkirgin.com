@@ -1,11 +1,27 @@
 <script is:inline>
-  const theme = localStorage.getItem("theme");
+  const STORAGE_THEME_KEY = "theme";
 
-  if (
-    theme === "dark" ||
-    ((theme === "system" || theme == null) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
+  const applyTheme = (theme) => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
+  const getStoredTheme = () => localStorage.getItem(STORAGE_THEME_KEY);
+  const storedTheme = getStoredTheme();
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  if (storedTheme === "dark" || storedTheme === "light") {
+    applyTheme(storedTheme);
+  } else {
+    applyTheme(mediaQuery.matches ? "dark" : "light");
+
+    mediaQuery.addEventListener("change", (e) => {
+      const current = getStoredTheme();
+      if (current === "dark" || current === "light") return;
+      applyTheme(e.matches ? "dark" : "light");
+    });
   }
 </script>

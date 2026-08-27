@@ -1,8 +1,6 @@
 ---
 import "~/styles/global.css";
-import Navbar from "~/components/Navbar.astro";
 import Head from "~/components/Head.astro";
-
 interface Props {
   title?: string;
   description?: string;
@@ -20,17 +18,9 @@ const props = Astro.props;
     is:inline
     src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "a2ab3c749177479d965530d31b29ce65"}'></script>
-  <body class="p-4 bg-background text-foreground">
-    <header>
-      <Navbar />
-    </header>
-    <main class="max-w-screen-sm mx-auto pt-6 lg:pt-0">
+  <body class="bg-background text-foreground font-custom-serif p-4 font-light">
+    <div class="mx-auto mt-8 max-w-screen-sm sm:mt-16">
       <slot />
-    </main>
-    <style is:global>
-      body {
-        font-family: system-ui, sans-serif;
-      }
-    </style>
+    </div>
   </body>
 </html>

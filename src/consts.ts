@@ -1,6 +1,7 @@
 export const siteConfig = {
-  title: "tarik kirgin",
-  titleTemplate: "%s | tarik kirgin",
+  title: "Tarik Kirgin",
+  titleTemplate: "%s ✶ Tarik Kirgin",
   description: "Personal website of Tarik Kirgin",
   imagePath: "/og.png",
+  url: "https://tarikkirgin.com"
 };

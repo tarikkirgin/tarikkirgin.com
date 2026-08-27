@@ -1,0 +1,24 @@
+---
+import { type CollectionEntry } from "astro:content";
+import ArticleCard from "~/components/writing/ArticleCard.astro";
+
+interface Props {
+  writing: CollectionEntry<"writing">[];
+}
+
+const { writing } = Astro.props;
+---
+
+{
+  writing.length > 0 ? (
+    <ul class="list-outside list-[star] pl-4">
+      {writing.map((article) => (
+        <li>
+          <ArticleCard article={article} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p class="text-muted">Nothing yet.</p>
+  )
+}

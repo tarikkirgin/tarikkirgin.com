@@ -1,0 +1,13 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro";
+import Heading from "~/components/Heading.astro";
+import { getCollection } from "astro:content";
+
+import ArticleList from "~/components/writing/ArticleList.astro";
+const writing = await getCollection("writing");
+---
+
+<MainLayout title="Writing">
+  <Heading>Writing</Heading>
+  <ArticleList writing={writing} />
+</MainLayout>

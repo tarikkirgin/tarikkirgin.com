@@ -1,0 +1,32 @@
+---
+import "~/styles/mdx.scss";
+
+import MainLayout from "./MainLayout.astro";
+import { type CollectionEntry, render } from "astro:content";
+import { format } from "date-fns";
+import Heading from "~/components/Heading.astro";
+
+interface Props {
+  writing: CollectionEntry<"writing">;
+}
+
+const { writing } = Astro.props;
+const { title, date } = writing.data;
+
+const formattedDate = format(date, "do MMMM, yyyy") ?? "";
+
+const { Content } = await render(writing);
+---
+
+<MainLayout title={title}>
+  <Heading>{title}</Heading>
+  <div class="text-muted flex flex-col gap-1 pb-12">
+    <date class="">
+      {formattedDate}
+    </date>
+    <p class="text-muted text-sm">
+      by <a href="/" class="link">Tarik Kirgin</a>
+    </p>
+  </div>
+  <article class="mdx"><Content /></article>
+</MainLayout>
