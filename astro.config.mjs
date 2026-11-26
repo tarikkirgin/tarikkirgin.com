@@ -2,7 +2,6 @@ import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import react from "@astrojs/react";
-import vercel from "@astrojs/vercel";
 import mdx from "@astrojs/mdx";
 import { unified, rehypeHeadingIds } from "@astrojs/markdown-remark";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -78,9 +77,4 @@ export default defineConfig({
   },
   integrations: [icon(), react(), mdx()],
   output: "static",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
 });
